@@ -1,5 +1,9 @@
 from mongoengine.queryset.visitor import Q as QNode
 from rest_framework.filters import SearchFilter
+from django.utils import six
+from functools import reduce
+import operator
+
 class SearchFilter(SearchFilter):
     def filter_queryset(self, request, queryset, view):
 
